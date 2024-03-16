@@ -2,7 +2,7 @@
 
     class Conexao
     {
-        private $host= 'localhost:3306';
+        private $host= 'localhost';
         private $db='loja';
         private $user='root';
         private $pass='';

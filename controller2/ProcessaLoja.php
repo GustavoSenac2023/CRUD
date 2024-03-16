@@ -31,7 +31,7 @@ function alterar(){
     $id=$_POST["codigo"];
     include "ContLoja.php";
     $contr = new ContLoja();
-    $contr->alterarLoja($endereco,$nome,$cnpj,$codigo);
+    $contr->alterarLoja($endereco,$nome,$cnpj,$id);
 }
 function excluir(){
     $id=$_REQUEST["codigo"];
