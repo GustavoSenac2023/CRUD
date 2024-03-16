@@ -15,6 +15,7 @@
         public static function alterarLoja($endereco,$nome,$cnpj,$codigo) {
             include '../model2/ModelLoja.php';
             $loja=new ModelLoja($endereco,$nome,$cnpj,$codigo);
+            echo "Controle";
             return $loja->alterarLoja($loja);
         }
         public static function listarLoja() {

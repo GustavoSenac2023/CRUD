@@ -104,8 +104,10 @@
         }
         function alterarLoja(ModelLoja $loja) {
             include '../dao2/DaoLoja.php';
+            echo "Model";
             $loja=new DaoLoja();
             $loja->alterarLoja($this);
+            
         }
         function excluirLoja($codigo){
             include '../dao2/DaoLoja.php';

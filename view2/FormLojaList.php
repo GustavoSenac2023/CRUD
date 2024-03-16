@@ -9,7 +9,7 @@
 <body>
     <div class="header">
         <img src="logo.jpg" alt="">
-        <a href="../index.php"><p>Home</p></a>
+        <a href="../index.html"><img src="home.png" alt="" srcset=""></a>
     </div>
     <?php
     include "../controller2/ContLoja.php";
@@ -42,6 +42,8 @@
     }
     
     ?>
-    
+    <div class="footer">
+        <p>System</p>
+    </div>
 </body>
 </html>

@@ -12,7 +12,7 @@
             $stmt->bindValue(':cnpj',$loja->getCnpj());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
-            echo "<script>location.href='../controller2/ProcessaLoja.php?op=Listar';</script>";
+            echo "<script>location.href='../view2/FormLojaList.php?op=Listar';</script>";
         }
         function listarLoja(){
             include 'Conexao.php';
@@ -29,17 +29,20 @@
             return $con->conn->query($sql);
         }
         function alterarLoja(ModelLoja $loja){
+            echo "Dao",$loja->getCodigo();
             include 'Conexao.php';
             $con= new Conexao();
-            $con->fazConexao(); 
+            $con->fazConexao();
             $sql="UPDATE loja SET endereco=:endereco,nome=:nome,cnpj=:cnpj WHERE codigo=:codigo";
             $stmt=$con->conn->prepare($sql);
+            echo $stmt->fetch(PDO::FETCH_ASSOC);
             $stmt->bindValue(':endereco',$loja->getEndereco());
             $stmt->bindValue(':nome',$loja->getNome());
             $stmt->bindValue(':cnpj',$loja->getCnpj());
+            $stmt->bindValue(':codigo',$loja->getCodigo());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
-            echo "<script>location.href='../controller2/ProcessaLoja.php?op=Listar';</script>";
+            echo "<script>location.href='../view2/FormLojaList.php?op=Listar';</script>";
         }
         function excluirLoja($codigo){
             include 'Conexao.php';
@@ -48,7 +51,7 @@
             $sql="DELETE FROM loja WHERE codigo= '$codigo'";
             $res=$con->conn->query($sql);
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
-            echo "<script>location.href='../controller2/ProcessaLoja.php?op=Listar';</script>";
+            echo "<script>location.href='../index.html';</script>";
         }
     }
 

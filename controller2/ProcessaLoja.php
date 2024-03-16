@@ -1,5 +1,7 @@
 <?php
+echo $_REQUEST["op"];
 switch ($_REQUEST["op"]) {
+    
     case "Incluir":
         incluir();
         break;
@@ -30,6 +32,7 @@ function alterar(){
     $cnpj=$_POST["cnpj"];
     $id=$_POST["codigo"];
     include "ContLoja.php";
+    echo "Processa";
     $contr = new ContLoja();
     $contr->alterarLoja($endereco,$nome,$cnpj,$id);
 }

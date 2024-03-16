@@ -41,7 +41,7 @@ print "<input type='hidden' name='codigo' value='$id'><br>";
 print "<input type='hidden' name='op' value='$operacao'><br>";
 print "<div id='btns'>";
 print "<input type='submit' value='$operacao'>";
-print "<a href='../index.php' id='link'><p>Home</p></a>";
+print "<a href='../index.html' id='link'><p>Home</p></a>";
 print "</div>";
 print "</form>";
 print "</div>";
