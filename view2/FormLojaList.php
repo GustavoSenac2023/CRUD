@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="header">
-        <img src="logo.jpg" alt="">
-        <a href="../index.html"><img src="home.png" alt="" srcset=""></a>
+        <img class="logo" src="logo.jpg" alt="">
+        <a class="link" href="../index.html"><img class="home" src="home.png" alt="" srcset=""></a>
     </div>
     <?php
     include "../controller2/ContLoja.php";
@@ -38,6 +38,7 @@
         }
         print "</table>";
     }else {
+        print "";
         echo "No data found!";
     }
     

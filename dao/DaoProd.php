@@ -13,7 +13,7 @@
             $stmt->bindValue(':cod_loja',$prod->getCodLoja());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
-            echo "<script>location.href='../controller/ProcessaProd.php?op=Listar';</script>";
+            echo "<script>location.href='../view/FormProdList.php?op=Listar';</script>";
         }
         function listarProd(){
             include 'Conexao.php';
@@ -42,7 +42,7 @@
             $stmt->bindValue(':cod_loja',$prod->getCodLoja());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
-            echo "<script>location.href='../controller/ProcessaProd.php?op=Listar';</script>";
+            echo "<script>location.href='../view/FormProdList.php?op=Listar';</script>";
         }
         function excluirProd($codigo){
             include 'Conexao.php';
@@ -51,7 +51,7 @@
             $sql="DELETE FROM produto WHERE codigo= '$codigo'";
             $res=$con->conn->query($sql);
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
-            echo "<script>location.href='../controller/ProcessaProd.php?op=Listar';</script>";
+            echo "<script>location.href='../index.html';</script>";
         }
     }
 

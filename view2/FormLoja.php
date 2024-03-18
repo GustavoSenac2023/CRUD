@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="header">
+        <img src="logo.jpg" alt="">
+        <a href="../index.html"><img src="home.png" alt="" srcset=""></a>
+    </div>
 <?php
 
 $op=$_REQUEST["op"];
@@ -27,26 +31,30 @@ if ($op=="Alterar") {
     $id="";
     $operacao="Incluir";
 }
-print "<div id='outer'>";
-print "<form action='../controller2/ProcessaLoja.php' method='post'>";
-print "<div id='inner'>";
-print "<label for='nome'>Nome:</label>";
-print "<input type='text' name='nome' value=".$nome."><br>";
-print "<label for='endereco'>Endereco:</label>";
-print "<input type='text' name='endereco' value=".$endereco."><br>";
-print "<label for='cnpj'>CNPJ:</label>";
-print "<input type='text' name='cnpj' value=".$cnpj."><br>";
-print "</div>";
-print "<input type='hidden' name='codigo' value='$id'><br>";
-print "<input type='hidden' name='op' value='$operacao'><br>";
-print "<div id='btns'>";
-print "<input type='submit' value='$operacao'>";
-print "<a href='../index.html' id='link'><p>Home</p></a>";
-print "</div>";
-print "</form>";
-print "</div>";
+print <<<END
+    <div id='outer'>;
+    <form action='../controller2/ProcessaLoja.php' onsubmit="return validateForm()" method='post'>
+    <div id='inner'>
+    <label for='nome'>Nome:</label>
+    <input type='text' name='nome' id='nome' value="$nome" required maxlength='50'><br>
+    <label for='endereco'>Endereco:</label>
+    <input type='text'  name='endereco' id='endereco' value="$endereco" required maxlength='50'><br>
+    <label for='cnpj'>CNPJ:</label>
+    <input type='text' name='cnpj' id='cnpj' value="$cnpj" required minlength='14' maxlength='14'><br>
+    </div>
+    <input type='hidden' name='codigo' value='$id'><br>
+    <input type='hidden' name='op' value='$operacao'><br>
+    <div id='btns'>
+    <input type='submit' class='in' value='$operacao'>
+    <a href='../index.html' id='link'><p>Home</p></a>
+    </div>
+    </form>
+    </div>
+END;
 ?>
-
+    <div class="footer">
+        <p>System</p>
+    </div>
 </body>
 </html>
 
