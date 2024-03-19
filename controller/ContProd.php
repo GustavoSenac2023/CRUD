@@ -1,7 +1,6 @@
 <?php
 
     class ContProd{
-
         public static function cadastrarProd($nome,$preco,$quantidade,$cod_loja) {
             include '../model/ModelProd.php';
             $prod=new ModelProd(null,$nome,$preco,$quantidade,$cod_loja);

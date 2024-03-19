@@ -57,6 +57,8 @@ print <<<END
 END;
 ?>
 <?php
+    $array=[];
+    $count=0;
     include "../controller2/ContLoja.php";
     $res = ContLoja::listarLoja();
     $qtd=$res->rowCount();
@@ -67,6 +69,7 @@ END;
         print "<th>Endereco</th>";
         print "<th>CNPJ</th>";
         while ($row=$res->fetch(PDO::FETCH_OBJ)) {
+            $array[$count]=$row->codigo;
             print "<tr>";
             print "<td>".$row->codigo."</td>";
             print "<td>".$row->nome."</td>";
@@ -74,14 +77,20 @@ END;
             print "<td>".$row->cnpj."</td>";
             echo "</form>";
             print "</tr>";
+            $count++;
         }
         print "</table>";
+        foreach ($array as $key) {
+            if ($key==$idLoja) {
+                print($key);
+            }
+        }
     }else {
         print "";
         echo "No data found!";
     }
     
-    ?>
+?>
     <div class="footer">
         <p>System</p>
     </div>

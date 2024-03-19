@@ -33,14 +33,14 @@ if ($op=="Alterar") {
 }
 print <<<END
     <div id='outer'>;
-    <form action='../controller2/ProcessaLoja.php' onsubmit="return validateForm()" method='post'>
+    <form action='../controller2/ProcessaLoja.php' onsubmit='return validateForm()' method='post'>
     <div id='inner'>
     <label for='nome'>Nome:</label>
     <input type='text' name='nome' id='nome' value="$nome" required maxlength='50'><br>
     <label for='endereco'>Endereco:</label>
     <input type='text'  name='endereco' id='endereco' value="$endereco" required maxlength='50'><br>
     <label for='cnpj'>CNPJ:</label>
-    <input type='text' name='cnpj' id='cnpj' value="$cnpj" required minlength='14' maxlength='14'><br>
+    <input type='text' name='cnpj' id='cnpj' value="$cnpj" required minlength='14' maxlength='20'><br>
     </div>
     <input type='hidden' name='codigo' value='$id'><br>
     <input type='hidden' name='op' value='$operacao'><br>
@@ -55,6 +55,7 @@ END;
     <div class="footer">
         <p>System</p>
     </div>
+    <script src="code.js"></script>
 </body>
 </html>
 

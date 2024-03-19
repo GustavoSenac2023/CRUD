@@ -12,6 +12,8 @@
         <a href="../index.html"><img src="../view2/home.png" alt="" srcset=""></a>
     </div>
     <?php
+    $arr=[];
+    $count=0;
     include "../controller/ContProd.php";
     $res = ContProd::listarProd();
     $qtd=$res->rowCount();
@@ -23,6 +25,7 @@
         print "<th>Quantidade</th>";
         print "<th>Codigo Loja</th>";
         while ($row=$res->fetch(PDO::FETCH_OBJ)) {
+            $arr[$count]=$row->codigo;
             print "<tr>";
             print "<td>".$row->codigo."</td>";
             print "<td>".$row->nome."</td>";
@@ -37,8 +40,11 @@
             </td>";
             echo "</form>";
             print "</tr>";
+            $count++;
         }
         print "</table>";
+        include "../controller/ProcessaProd.php";
+        
     }else {
         echo "No data found!";
     }

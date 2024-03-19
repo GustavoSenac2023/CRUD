@@ -16,9 +16,6 @@
             $this->codigo = $codigo;
         }
 
-        
-
-
         /**
          * Get the value of nome
          */
