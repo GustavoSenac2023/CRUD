@@ -42,13 +42,10 @@
             print "</tr>";
             $count++;
         }
-        print "</table>";
-        include "../controller/ProcessaProd.php";
-        
+        print "</table>";     
     }else {
         echo "No data found!";
     }
-    
     ?>
     <div class="footer">
         <p>System</p>

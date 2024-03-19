@@ -1,5 +1,4 @@
 <?php
-echo $_REQUEST["op"];
 switch ($_REQUEST["op"]) {
     
     case "Incluir":
