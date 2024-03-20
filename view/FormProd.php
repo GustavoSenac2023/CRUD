@@ -35,10 +35,10 @@ if ($op=="Alterar") {
 }
 print <<<END
 <div id='outer'>
-<form action='../controller/processaProd.php' method='post'>
+<form action='../controller/ProcessaProd.php' onsubmit='return validateForm()' method='post'>
 <div id='inner'>
 <label for='nome'>Nome:</label>
-<input type='text' name='nome' id='preco' value="$nome" required maxlength='50'><br>
+<input type='text' name='nome' id='nome' value="$nome" required maxlength='50'><br>
 <label for='preco'>Preco:</label>
 <input type='text' name='preco' id='preco' value="$preco" required ><br>
 <label for='quantidade'>Quantidade:</label>
@@ -81,6 +81,7 @@ END;
         }
         print "</table>";
         foreach ($array as $key) {
+            print($key);
             if ($key==$idLoja) {
                 print($key);
             }
@@ -94,6 +95,7 @@ END;
     <div class="footer">
         <p>System</p>
     </div>
+    <script src="code.js"></script>
 </body>
 </html>
 

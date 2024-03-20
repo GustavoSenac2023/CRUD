@@ -42,12 +42,10 @@
             print "</tr>";
             $count++;
         }
-        print "</table>";
-        
+        print "</table>";     
     }else {
         echo "No data found!";
     }
-    
     ?>
     <div class="footer">
         <p>System</p>
