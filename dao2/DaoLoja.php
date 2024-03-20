@@ -29,7 +29,6 @@
             return $con->conn->query($sql);
         }
         function alterarLoja(ModelLoja $loja){
-            echo "Dao",$loja->getCodigo();
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();

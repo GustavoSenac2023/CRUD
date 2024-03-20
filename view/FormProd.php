@@ -80,12 +80,6 @@ END;
             $count++;
         }
         print "</table>";
-        foreach ($array as $key) {
-            print($key);
-            if ($key==$idLoja) {
-                print($key);
-            }
-        }
     }else {
         print "";
         echo "No data found!";
