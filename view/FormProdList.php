@@ -43,7 +43,6 @@
             $count++;
         }
         print "</table>";
-        include "../controller/ProcessaProd.php";
         
     }else {
         echo "No data found!";
